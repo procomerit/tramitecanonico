@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="facturasExportacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="factura">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="exportador">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tipoIdExportador" type="xs:string" />
+                    <xs:element name="numeroIdExportador" type="xs:string" />
+                    <xs:element name="nombreExportador" type="xs:string" />
+                    <xs:element name="direccionExportador" type="xs:string" />
+                    <xs:element name="telefonoExportador" type="xs:unsignedInt" />
+                    <xs:element name="nivelComercialExportador" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="numeroFactura" type="xs:string" />
+              <xs:element name="consignatario">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="numeroIdConsignatario" type="xs:string" />
+                    <xs:element name="nombreConsignatario" type="xs:string" />
+                    <xs:element name="direccionConsignatario" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="importador">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombreImportador" type="xs:string" />
+                    <xs:element name="direccionImportador" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="incoterms">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="condicionesEntrega" type="xs:string" />
+                    <xs:element name="paisEntrega" type="xs:unsignedShort" />
+                    <xs:element name="lugarEntrega" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="embarque">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="modalidadTransporte" type="xs:string" />
+                    <xs:element name="paisProcedencia" type="xs:string" />
+                    <xs:element name="puertoEmbarque" type="xs:string" />
+                    <xs:element name="fechaEmbarque" type="xs:date" />
+                    <xs:element name="puertoArribo" type="xs:string" />
+                    <xs:element name="conocimientoEmbarque" type="xs:string" />
+                    <xs:element name="codAduana" type="xs:string" />
+                    <xs:element name="agenciaAduanas" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="tramitador">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string" />
+                    <xs:element name="cedula" type="xs:string" />
+		    <xs:element name="tipocedula" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="monedaFactura" type="xs:string" />
+              <xs:element name="factorConversion" type="xs:decimal" />
+              <xs:element name="montoFactorConversion" type="xs:decimal" />
+              <xs:element name="montoTotalFactura" type="xs:decimal" />
+              <xs:element name="embalaje" type="xs:string" />
+              <xs:element name="tipoTramite" type="xs:string" />
+              <xs:element name="fechaVencimiento" type="xs:date" />
+              <xs:element name="observaciones" type="xs:string" />
+              <xs:element name="mercancias">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="mercancia">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="item" type="xs:unsignedByte" />
+                          <xs:element name="codigoUnidadComercial" type="xs:string" />
+                          <xs:element name="cantidadUnidadesComerciales" type="xs:decimal" />
+                          <xs:element name="cantidadMercanciaUnidadesComerciales" type="xs:decimal" />
+                          <xs:element name="partidaArancelaria" type="xs:string" />
+                          <xs:element name="descripcionMercancia" type="xs:string" />
+                          <xs:element name="descripcionComercial" type="xs:string" />
+                          <xs:element name="marcaMercancia" type="xs:string" />
+                          <xs:element name="modeloMercancia" type="xs:string" />
+                          <xs:element name="codigoProducto" type="xs:string" />
+                          <xs:element name="condicionFisica" type="xs:unsignedByte" />
+                          <xs:element name="paisDestino" type="xs:string" />
+                          <xs:element name="paisOrigen" type="xs:string" />
+                          <xs:element name="precioUnitario" type="xs:decimal" />
+                          <xs:element name="precioTotal" type="xs:decimal" />
+                          <xs:element name="montoUnitarioValorAgregado" type="xs:decimal" />
+                          <xs:element name="criterioOrigen" type="xs:string" />
+                          <xs:element name="aplicaMetodoContenidoRegional" type="xs:string" />
+                          <xs:element name="otrosCriteriosOrigen" type="xs:string" />
+                          <xs:element name="pesoBruto" type="xs:decimal" />
+                          <xs:element name="pesoNeto" type="xs:decimal" />
+                        </xs:sequence>
+                        <xs:attribute name="num" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NTList">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NT" type="xs:unsignedInt" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NT0080">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DatosGenerales">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="KilosCafeTostado" type="xs:decimal" />
+                          <xs:element name="NormaTecnica" type="xs:unsignedByte" />
+                          <xs:element name="IndicacionOrigen" type="xs:unsignedByte" />
+                          <xs:element name="FechaInspeccion" type="xs:date" />
+                          <xs:element name="HoraInspeccion" type="xs:string" />
+                          <xs:element name="CantidadSacos" type="xs:unsignedInt" />
+                          <xs:element name="DescripcionMarca" type="xs:string" />
+                          <xs:element name="PesoBruto" type="xs:decimal" />
+                          <xs:element name="Impuesto" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Contratos">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Contrato">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="codContrato" type="xs:int" />
+                                <xs:element name="tipoContrato" type="xs:string" />
+                                <xs:element name="codCosecha" type="xs:int" />
+                                <xs:element name="codCesion" type="xs:unsignedByte" />
+                                <xs:element name="kilos" type="xs:decimal" />
+				<xs:element name="fob" type="xs:decimal" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="num" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
