@@ -1,0 +1,101 @@
+facturasExportacion>
+   <factura num='1'>
+      <exportador>
+         <tipoIdExportador>2</tipoIdExportador>
+         <numeroIdExportador>310115390536</numeroIdExportador>
+         <nombreExportador>Cafe Britt Costa Rica, S.A.</nombreExportador>
+         <direccionExportador>DE LA COMANDANCIA 900 MTS NORTE Y 400 MTS OESTE</direccionExportador>
+         <telefonoExportador>22771500</telefonoExportador>
+         <nivelComercialExportador>1</nivelComercialExportador>
+      </exportador>
+      <numeroFactura>89</numeroFactura>
+      <consignatario>
+         <numeroIdConsignatario>AX345</numeroIdConsignatario>
+         <nombreConsignatario>CAFEE</nombreConsignatario>
+         <direccionConsignatario>España</direccionConsignatario>
+      </consignatario>
+      <importador>
+         <nombreImportador>CAFEE</nombreImportador>
+         <direccionImportador>España</direccionImportador>
+      </importador>
+      <incoterms>
+         <condicionesEntrega>FOB</condicionesEntrega>
+         <paisEntrega>724</paisEntrega>
+         <lugarEntrega>Madrid</lugarEntrega>
+      </incoterms>
+      <embarque>
+         <modalidadTransporte>02</modalidadTransporte>
+         <paisProcedencia>188</paisProcedencia>
+         <puertoEmbarque>188LIO</puertoEmbarque>
+         <fechaEmbarque>2014-12-05</fechaEmbarque>
+         <puertoArribo>724AGU</puertoArribo>
+         <conocimientoEmbarque>JKLL-789</conocimientoEmbarque>
+         <codAduana>006</codAduana>
+         <agenciaAduanas>Grupo Servica (Costa Rica), S.A.</agenciaAduanas>
+      </embarque>
+      <tramitador>
+          <nombre>JUAN CARLOS VARGAS</nombre>
+          <cedula>106670042</cedula>
+          <tipocedula>1</tipocedula>
+      </tramitador>
+      <monedaFactura>USD</monedaFactura>
+      <factorConversion>12.01</factorConversion>
+      <montoFactorConversion>1234.56</montoFactorConversion>
+      <montoTotalFactura>0.0154</montoTotalFactura>
+      <embalaje>CAJAS</embalaje>
+      <tipoTramite>Comercialización</tipoTramite>
+      <fechaVencimiento>2015-01-02</fechaVencimiento>
+      <observaciones>Observaciones</observaciones>
+      <mercancias>
+         <mercancia num='1'>
+            <item>1</item>
+            <codigoUnidadComercial>1</codigoUnidadComercial>
+            <cantidadUnidadesComerciales>1</cantidadUnidadesComerciales>
+            <cantidadMercanciaUnidadesComerciales>1</cantidadMercanciaUnidadesComerciales>
+            <partidaArancelaria>0901210010</partidaArancelaria>
+            <descripcionMercancia>--- En envase de vidrio o de lata. C.A= El intercambio estará  sujeto al pago de los derechos arancelarios de importación.    Decreto 28221-MEIC 17-11-99</descripcionMercancia>
+            <descripcionComercial>--- En envase de vidrio o de lata. C.A= El intercambio estará  sujeto al pago de los derechos arancelarios de importación.    Decreto 28221-MEIC 17-11-99</descripcionComercial>
+            <marcaMercancia>MARCA MERCANCIA</marcaMercancia>
+            <modeloMercancia>MODELO</modeloMercancia>
+            <codigoProducto>ABX456</codigoProducto>
+            <condicionFisica>19</condicionFisica>
+            <paisDestino>724</paisDestino>
+            <paisOrigen>188</paisOrigen>
+            <precioUnitario>0.0190</precioUnitario>
+            <precioTotal>0.0190</precioTotal>
+            <montoUnitarioValorAgregado>0</montoUnitarioValorAgregado>
+            <criterioOrigen>A</criterioOrigen>
+            <aplicaMetodoContenidoRegional>SI</aplicaMetodoContenidoRegional>
+            <otrosCriteriosOrigen>DMI</otrosCriteriosOrigen>
+            <pesoBruto>1</pesoBruto>
+            <pesoNeto>1</pesoNeto>
+         </mercancia>
+      </mercancias>
+       <NTList>
+          <NT>0080</NT>
+        </NTList>
+    <NT0080>
+      <DatosGenerales>
+        <KilosCafeTostado>1</KilosCafeTostado>
+        <NormaTecnica>1</NormaTecnica>
+        <IndicacionOrigen>1</IndicacionOrigen>
+        <FechaInspeccion>2014-12-18</FechaInspeccion>
+        <HoraInspeccion>10AM</HoraInspeccion>
+        <CantidadSacos>100</CantidadSacos>
+        <DescripcionMarca>MARC</DescripcionMarca>
+        <PesoBruto>1</PesoBruto>
+        <Impuesto>0.0003</Impuesto>
+      </DatosGenerales>
+      <Contratos>
+         <Contrato>
+             <codContrato>2711</codContrato>
+             <tipoContrato>F</tipoContrato>
+             <codCosecha>1314</codCosecha>
+             <codCesion>2</codCesion>
+             <kilos>1</kilos>
+             <fob>0.0190</fob>
+         </Contrato>
+      </Contratos>
+    </NT0080>
+   </factura>
+</facturasExportacion>
