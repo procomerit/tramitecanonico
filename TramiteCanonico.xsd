@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="utf-16"?>
+<xs:schema xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="facturasExportacion">
     <xs:complexType>
       <xs:sequence>
@@ -40,7 +40,13 @@
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="condicionesEntrega" type="xs:string" />
-                    <xs:element name="paisEntrega" type="xs:unsignedShort" />
+                    <xs:element name="paisEntrega">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="4" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                     <xs:element name="lugarEntrega" type="xs:string" />
                   </xs:sequence>
                 </xs:complexType>
@@ -64,7 +70,7 @@
                   <xs:sequence>
                     <xs:element name="nombre" type="xs:string" />
                     <xs:element name="cedula" type="xs:string" />
-		    <xs:element name="tipocedula" type="xs:string" />
+                    <xs:element name="tipocedula" type="xs:string" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -128,7 +134,7 @@
                           <xs:element name="IndicacionOrigen" type="xs:unsignedByte" />
                           <xs:element name="FechaInspeccion" type="xs:date" />
                           <xs:element name="HoraInspeccion" type="xs:string" />
-                          <xs:element name="CantidadSacos" type="xs:unsignedInt" />
+                          <xs:element name="CantidadSacos" type="xs:int" />
                           <xs:element name="DescripcionMarca" type="xs:string" />
                           <xs:element name="PesoBruto" type="xs:decimal" />
                           <xs:element name="Impuesto" type="xs:decimal" />
@@ -146,9 +152,244 @@
                                 <xs:element name="codCosecha" type="xs:int" />
                                 <xs:element name="codCesion" type="xs:unsignedByte" />
                                 <xs:element name="kilos" type="xs:decimal" />
-				<xs:element name="fob" type="xs:decimal" />
+                                <xs:element name="fob" type="xs:decimal" />
                               </xs:sequence>
                             </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="contenedores">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="contenedor">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="NoContenedor" type="xs:string" />
+                          <xs:element name="marchamo1" type="xs:string" />
+                          <xs:element name="marchamo2" type="xs:string" />
+                          <xs:element name="marchamo3" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NT0265">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="datosMercancias265">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="datosMercancia265">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="noLinea" type="xs:unsignedShort" />
+                                <xs:element default="Granos" name="presentacion">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="Aglomerados de Aserrin" />
+                                      <xs:enumeration value="Aserrada" />
+                                      <xs:enumeration value="Aserrin" />
+                                      <xs:enumeration value="Bloque" />
+                                      <xs:enumeration value="Bulbo" />
+                                      <xs:enumeration value="Bulbo con raíz" />
+                                      <xs:enumeration value="Bulbo con raíz y hojas" />
+                                      <xs:enumeration value="Café" />
+                                      <xs:enumeration value="Cajas" />
+                                      <xs:enumeration value="Caña con callo" />
+                                      <xs:enumeration value="Caña descubierta" />
+                                      <xs:enumeration value="Cigarros-Puros" />
+                                      <xs:enumeration value="Congelado" />
+                                      <xs:enumeration value="Embalaje" />
+                                      <xs:enumeration value="Embalaje-Cajones" />
+                                      <xs:enumeration value="Embalaje-Carretes de madera" />
+                                      <xs:enumeration value="Fibra" />
+                                      <xs:enumeration value="Flores cortadas" />
+                                      <xs:enumeration value="Frutas" />
+                                      <xs:enumeration value="Granos" />
+                                      <xs:enumeration value="Granulados de Aserrin" />
+                                      <xs:enumeration value="Hojas cortadas" />
+                                      <xs:enumeration value="Hongos comestibles" />
+                                      <xs:enumeration value="Hortalizas" />
+                                      <xs:enumeration value="Kids para fabricación de Tarimas" />
+                                      <xs:enumeration value="Lamina" />
+                                      <xs:enumeration value="Madera aserrada" />
+                                      <xs:enumeration value="Madera comprimida" />
+                                      <xs:enumeration value="Madera en Rollo" />
+                                      <xs:enumeration value="Medicinales y especias" />
+                                      <xs:enumeration value="Medio" />
+                                      <xs:enumeration value="Muebles" />
+                                      <xs:enumeration value="Pelado" />
+                                      <xs:enumeration value="Piezas de madera" />
+                                      <xs:enumeration value="Planta ramificada (Branches y skinnis)" />
+                                      <xs:enumeration value="Plantas con raíz" />
+                                      <xs:enumeration value="Plantas sin raíz" />
+                                      <xs:enumeration value="Plántulas In vitro con medio de cultivo" />
+                                      <xs:enumeration value="Plántulas In vitro sin medio de cultivo" />
+                                      <xs:enumeration value="Polvo( Polen)" />
+                                      <xs:enumeration value="Procesada" />
+                                      <xs:enumeration value="Procesado (pelado y cortado)" />
+                                      <xs:enumeration value="Púa, esqueje, estaca" />
+                                      <xs:enumeration value="Raíces y tubérculos" />
+                                      <xs:enumeration value="Raíz tuberosa" />
+                                      <xs:enumeration value="Rama" />
+                                      <xs:enumeration value="Rizoma" />
+                                      <xs:enumeration value="Semilla" />
+                                      <xs:enumeration value="Tallos" />
+                                      <xs:enumeration value="Tallos+Hojas" />
+                                      <xs:enumeration value="Tarima europea" />
+                                      <xs:enumeration value="Tarimas" />
+                                      <xs:enumeration value="Tarimas americana" />
+                                      <xs:enumeration value="Troza" />
+                                      <xs:enumeration value="Virutas de madera" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="lugarProduccion" type="xs:string" />
+                                <xs:element name="totalUnidades" type="xs:double" />
+                                <xs:element name="productoMAG">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element default="2820" name="idProductoMAG" type="xs:int" />
+                                      <xs:element default="Cafe" name="descripcionProductoMAG" type="xs:string" />
+                                      <xs:element name="cantidad" type="xs:double" />
+                                      <xs:element default="1" name="codigoUnidadComercial" type="xs:string" />
+                                      <xs:element default="Coffea arabica" name="descripcionCientifica" type="xs:string" />
+                                      <xs:element name="idSuplidor" type="xs:string" />
+                                      <xs:element name="descripcionSuplidor" type="xs:string" />
+                                      <xs:element name="certificacionEspecial" type="xs:string" />
+                                      <xs:element name="pesoBruto" type="xs:double" />
+                                      <xs:element name="pesoNeto" type="xs:double" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="productosQuimicos">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="productoQuimico">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="idProducto" type="xs:unsignedInt" />
+                                <xs:element name="nombreProducto" type="xs:string" />
+                                <xs:element name="duracion" type="xs:string" />
+                                <xs:element name="temperatura" type="xs:string" />
+                                <xs:element name="tratamientos">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="tratamiento">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="idTratamiento" type="xs:string" />
+                                            <xs:element name="nombreTratamiento" type="xs:string" />
+                                            <xs:element name="informacionAdicional" type="xs:string" />
+                                            <xs:element name="responsable" type="xs:string" />
+                                            <xs:element name="fechaTratamiento" type="xs:date" />
+                                            <xs:element name="tratamientoBromuro">
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="SI" />
+                                                  <xs:enumeration value="NO" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="concentracion" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="paisesTransito">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="paisTransito">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="orden" type="xs:unsignedByte" />
+                                <xs:element name="pais">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:minLength value="4" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="EncabezadoFito">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="noFito" type="xs:unsignedInt" />
+                          <xs:element name="CasillasIngles">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="enIngles">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:enumeration value="SI" />
+                                      <xs:enumeration value="NO" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="paisDestinoIngles" type="xs:string" />
+                                <xs:element name="paisLlegadaIngles" type="xs:string" />
+                                <xs:element name="puertoDestinoIngles" type="xs:string" />
+                                <xs:element name="empaqueIngles" type="xs:string" />
+                                <xs:element name="paisTransitoIngles" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ImprimirTratamiento">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="SI" />
+                                <xs:enumeration value="NO" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="codAduanaControl">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:pattern value="[0-9][0-9][0-9]" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="paisEntrada">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:minLength value="4" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="vaporVuelo" type="xs:string" />
+                          <xs:element name="cobroBodegaSimple" type="xs:double" />
+                          <xs:element name="cobroBodegaGranel" type="xs:double" />
+                          <xs:element name="cobroContenedor">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="SI" />
+                                <xs:enumeration value="NO" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                         </xs:sequence>
                       </xs:complexType>
